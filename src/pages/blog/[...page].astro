@@ -14,6 +14,7 @@ import postImage3 from '@assets/images/posts/post-image-3.png'
 import postImage4 from '@assets/images/posts/post-image-4.png'
 import postImage5 from '@assets/images/posts/post-image-5.png'
 import postImage6 from '@assets/images/posts/post-image-6.png'
+import googleWebMcpImage from '@assets/images/posts/google-webmcp.png'
 
 interface ApiPost {
   id: number
@@ -53,8 +54,8 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
     return truncated
   }
 
-  // Limit to the first 30 posts for demo purposes
-  const postsWithImages = data.slice(0, 30).map((post) => {
+  // Limit to the first 2 posts for demo purposes
+  const postsWithImages = data.slice(0, 2).map((post) => {
     const truncatedTitle = truncateTitle(post.title)
     return {
       ...post,
@@ -63,6 +64,18 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
       shortUrl: slugify(truncatedTitle),
     }
   })
+
+  // Insert our custom blog post manually
+  const customPost = {
+    id: 9999,
+    userId: 1,
+    title: 'Google a lansat oficial WebMCP: Ce înseamnă asta pentru viitorul AI Browsing-ului',
+    body: 'O nouă lansare majoră Google schimbă felul în care AI-ul interacționează cu web-ul. Află ce este WebMCP și cum va impacta SEO și navigarea.',
+    featuredImage: googleWebMcpImage,
+    shortUrl: 'google-a-lansat-oficial-webmcp',
+  }
+
+  postsWithImages.unshift(customPost)
 
   return paginate(postsWithImages, { pageSize: 6 })
 }
@@ -75,12 +88,12 @@ const { page } = Astro.props as Props
 ---
 
 <DefaultLayout
-  title="Blog"
-  description="An example of a blog with dynamic content fetched from JSONPlaceholder using the title, body and userId."
+  title="Blog indexLab"
+  description="Cele mai noi articole, noutăți și resurse despre SEO, Inteligență Artificială și Optimizare Web."
 >
   <PageHeader
     title="Blog"
-    subtitle='An example of a blog with dynamic content fetched from <a href="https://jsonplaceholder.typicode.com/posts">JSONPlaceholder</a> using the title, body and userId. The Accessible Astro Card Component is used here to display al the posts.'
+    subtitle="Noutăți, strategii și tot ce trebuie să știi din lumea AI SEO și optimizării pentru motoarele generative."
     bgType="bordered"
   />
 
@@ -96,7 +109,7 @@ const { page } = Astro.props as Props
                 url={'/blog/' + post.shortUrl}
                 title={post.title}
                 headingLevel="h2"
-                footer={'userId:' + post.userId}
+                footer={'Florin Cristian'}
                 fullHeight={true}
               >
                 {post.body}

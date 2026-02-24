@@ -1,0 +1,91 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import SocialShares from '@components/SocialShares.astro'
+import { Heading } from 'accessible-astro-components'
+import { Image } from 'astro:assets'
+
+const title = 'Google a lansat oficial WebMCP: Ce înseamnă asta pentru viitorul AI Browsing-ului'
+const description = 'O nouă lansare majoră Google schimbă felul în care AI-ul interacționează cu web-ul. Află ce este WebMCP și cum va impacta SEO și navigarea.'
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href
+const author = {
+  name: 'Florin Cristian',
+  image: '/posts/post-image-1.png',
+  bio: 'Specialist SEO & AIO',
+}
+---
+
+<DefaultLayout title={title} description={description} url={canonicalUrl}>
+  <PageHeader
+    title={title}
+    subtitle={description}
+    author={author}
+    bgType="bordered"
+    featuredImage="/posts/google-webmcp.png"
+  />
+  <section class="my-12">
+    <div class="narrow container">
+      <p class="text-2xl font-bold">Rezumat</p>
+      <p class="text-xl">
+        Google a lansat o versiune preliminară (early preview) pentru WebMCP (Web Model Context Protocol), un nou protocol nativ pentru browsere care standardizează modul în care agenții AI interacționează cu site-urile web. Acesta permite site-urilor să-și comunice capabilitățile direct către agenți prin intermediul „Tool Contracts” (Contracte de Instrumente), înlocuind tehnica de "screen scraping" cu interacțiuni precise, bazate pe instrumente. Această abordare îmbunătățește eficiența tokenurilor și acuratețea sarcinilor pentru agenții AI, semnalând o schimbare majoră pentru dezvoltarea web și pentru SEO.
+      </p>
+    </div>
+  </section>
+
+  <hr class="border-border-color-subtle my-8" />
+
+  <section class="my-12">
+    <div class="narrow space-content container">
+      <Heading level="h2">Google lansează WebMCP în versiune preliminară: Noul standard pentru interacțiunile agenților AI pe web</Heading>
+      <p>
+        Google a lansat oficial o versiune preliminară a <strong>WebMCP</strong> (Web Model Context Protocol), un nou protocol nativ pentru browsere care redefinește modul în care agenții AI interacționează cu site-urile web. Anunțat de André Cipriani Bandarra (dezvoltator Google) pe blogul Chrome Developers, WebMCP introduce un mod structurat și standardizat prin care site-urile își pot comunica funcționalitățile direct către agenții AI — înlocuind metodele nesigure de analizare DOM (DOM parsing) și extragere de pe ecran cu interacțiuni precise, direct la sursă.
+      </p>
+
+      <Heading level="h2">Ce este WebMCP și de ce contează?</Heading>
+      <p>
+        WebMCP permite site-urilor web să publice un „Tool Contract” (Contract de Instrumente) care poate fi citit de mașini — în esență, o listă clară de acțiuni pe care agenții AI le pot efectua pe un anumit site. Printr-un nou API de browser numit <code>navigator.modelContext</code>, un site web poate expune funcții specifice, cum ar fi rezervarea unui zbor, trimiterea unui tichet de suport sau căutarea într-un catalog de produse. În loc ca un agent AI să ghicească pe ce butoane să dea click sau ce formulare să completeze, acesta primește instrucțiuni structurate și poate executa acțiunile direct.
+      </p>
+
+      <p>Protocolul introduce două API-uri complementare:</p>
+      <ul class="list-inside list-disc space-y-2">
+        <li><strong>API-ul Declarativ (Declarative API):</strong> Funcționează cu formularele HTML standard, facilitând adăugarea de atribute „agent-ready” (pregătite pentru agenți) la markup-ul existent cu un efort minim.</li>
+        <li><strong>API-ul Imperativ (Imperative API):</strong> Gestionează interacțiuni mai complexe, bazate pe JavaScript, unde dezvoltatorii pot înregistra scheme de instrumente detaliate folosind <code>registerTool()</code> — similar cu modul în care definițiile instrumentelor funcționează cu endpoint-urile API de la OpenAI sau Anthropic, dar rulând integral pe partea de client (client-side) în browser.</li>
+      </ul>
+
+      <p>
+        Această abordare oferă avantaje semnificative față de metodele actuale bazate pe vizualizare (vision-based). Conform primelor teste de performanță, WebMCP oferă o îmbunătățire de până la 89% a eficienței tokenurilor în comparație cu interacțiunile bazate pe capturi de ecran, crescând în același timp acuratețea sarcinilor la aproximativ 98%.
+      </p>
+
+      <Heading level="h2">Cum poți accesa versiunea preliminară WebMCP</Heading>
+      <p>
+        WebMCP este disponibil în prezent în <strong>Chrome 146 Canary</strong>, ascuns în spatele flag-ului de funcționalitate „WebMCP for testing”. Dezvoltatorii trebuie să se înscrie în programul Google <strong>Early Preview Program (EPP)</strong> pentru a avea acces la documentația completă, demonstrații și specificațiile API-ului. EPP permite inginerilor să testeze modul în care diferite modele de limbaj de mari dimensiuni (LLM-uri) interpretează descrierile instrumentelor lor și să le ajusteze înainte ca protocolul să devină un standard global.
+      </p>
+      <p>
+        Specificația este dezvoltată în colaborare cu <strong>Microsoft</strong> și este incubată prin intermediul grupului comunitar <strong>W3C Web Machine Learning</strong>, ceea ce semnalează un efort serios pentru a transforma WebMCP într-un standard web oficial. Observatorii din industrie se așteaptă la anunțuri formale privind suportul nativ în browsere până la jumătatea sau sfârșitul anului 2026, evenimentele Google Cloud Next și Google I/O fiind momentele ideale pentru o lansare mai amplă.
+      </p>
+
+      <Heading level="h2">Ce înseamnă WebMCP pentru SEO și „Web-ul Agentic”</Heading>
+      <p>
+        Pentru profesioniștii SEO și dezvoltatorii web, WebMCP reprezintă ceea ce unii experți numesc deja <strong>cea mai mare schimbare în SEO tehnic de la introducerea datelor structurate (schema markup)</strong>. Pe măsură ce agenții AI devin capabili să apeleze direct funcțiile site-urilor web, modul în care conținutul este descoperit, afișat și monetizat se va schimba fundamental.
+      </p>
+      <p>
+        Site-urile care vor implementa WebMCP devreme vor avea un avantaj competitiv uriaș într-un internet din ce în ce mai dominat de agenți AI. Site-urile de e-commerce pot ghida agenții AI prin căutările de produse și procesele de finalizare a comenzii într-un mod mult mai fiabil. Furnizorii de servicii de turism pot facilita căutările și rezervările de zboruri complet automatizate. Sistemele de asistență pentru clienți pot accepta tichete mult mai detaliate, completate automat — toate acestea reducând punctele de fricțiune din User Experience și îmbunătățind ratele de conversie.
+      </p>
+      <p>
+        Este important de reținut că WebMCP este diferit din punct de vedere arhitectural de Model Context Protocol (MCP) dezvoltat de Anthropic. În timp ce MCP-ul Anthropic utilizează JSON-RPC pentru integrarea pe server (server-side) la nivel de backend, WebMCP funcționează complet pe partea de client prin intermediul API-urilor native ale browserului. Cele două protocoale sunt complementare: MCP conectează agenții AI la serviciile de backend, în timp ce WebMCP îi conectează la interfețele bazate pe browser. Multe organizații vor trebui probabil să suporte ambele protocoale pentru a asigura o acoperire completă pentru agenți.
+      </p>
+
+      <Heading level="h2">Idei principale pentru dezvoltatorii web și proprietarii de site-uri</Heading>
+      <p>
+        WebMCP se află încă în stadii incipiente, dar direcția este clară: web-ul este reconfigurat special pentru agenții AI. Dezvoltatorii și profesioniștii SEO ar trebui să înceapă de pe acum să se familiarizeze cu protocolul, să se alăture programului Early Preview și să evalueze modul în care formularele HTML existente și arhitectura site-ului pot fi adaptate pentru interacțiuni „agent-ready”. Cei care se adaptează rapid vor fi cel mai bine poziționați pe măsură ce web-ul agentic va deveni noul standard al industriei.
+      </p>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="narrow space-content container">
+      <Heading level="h2">Distribuie acest articol</Heading>
+      <p>Dacă ai găsit informațiile utile, nu ezita să le distribui colegilor sau prietenilor tăi!</p>
+      <SocialShares />
+    </div>
+  </section>
+</DefaultLayout>

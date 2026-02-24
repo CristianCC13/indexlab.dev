@@ -19,15 +19,15 @@ interface Props {
 const { loading = 'eager' }: Props = Astro.props
 ---
 
-<Link href="/" class="flex items-center gap-2">
+<Link href="/" class="flex items-center gap-1">
   {
     themeConfig.logo && (
       <Image
         src={themeConfig.logo}
         alt=""
         aria-hidden="true"
-        width="47"
-        height="37"
+        width="24"
+        height="18"
         loading={loading}
       />
     )

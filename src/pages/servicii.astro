@@ -1,0 +1,23 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Heading } from 'accessible-astro-components'
+---
+
+<DefaultLayout title="Servicii" description="Serviciile noastre">
+  <PageHeader title="Servicii" subtitle="Descoperă cum te putem ajuta să îți crești afacerea." bgType="gradient" />
+  <section class="my-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card p-6 border rounded-lg shadow-sm">
+          <Heading level="h2" class="text-xl mb-4">Optimizare tehnică</Heading>
+          <p>Îți pregătim site-ul pentru era Inteligenței Artificiale și îl facem accesibil pentru toți utilizatorii.</p>
+        </div>
+        <div class="card p-6 border rounded-lg shadow-sm">
+          <Heading level="h2" class="text-xl mb-4">Dezvoltare web</Heading>
+          <p>Creăm soluții web rapide, securizate și ușor de utilizat, respectând cele mai noi standarde.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

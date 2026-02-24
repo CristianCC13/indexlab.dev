@@ -6,72 +6,58 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <DefaultLayout title="Contact">
-  <PageHeader title="Contact" subtitle="Have a question? Get in touch with us!" bgType="gradient" />
+  <PageHeader title="Contact" subtitle="„Întrebări sau soluții AI? Completează formularul și te contactăm!”" bgType="gradient" />
   <section class="my-16">
     <div class="container">
-      <Heading level="h2">Let's talk</Heading>
+      <Heading level="h2">Contactează-ne  </Heading>
     </div>
   </section>
   <section class="container">
     <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
       <div class="space-content">
         <Form name="contact" action="/thank-you" method="post">
-          <!-- Input field with custom validation message -->
           <Input
             name="firstname"
-            label="First name"
+            label="Nume"
             required
-            data-validation="We need your first name to address you correctly"
+            data-validation="Avem nevoie de numele tău pentru a ști cum să ne adresăm corect"
             autocomplete="given-name"
           />
 
-          <Input name="email" label="Email address" type="email" required autocomplete="email" />
+          <Input name="email" label="Adresă de email" type="email" required autocomplete="email" />
 
-          <!-- Custom validation with pattern -->
-          <Input name="phone" label="Phone number" type="tel" required data-validation-pattern="^[0-9]{10}$" />
+          <Textarea name="message" label="Mesaj" required />
 
-          <Textarea name="message" label="Message" required />
-
-          <!-- Checkbox group with validation -->
           <Fieldset
             name="interests"
-            legend="What are you interested in?"
+            legend="De ce servicii ești interesat?"
             required
-            data-validation="Please select at least one area of interest"
+            data-validation="Te rugăm să selectezi cel puțin un serviciu de interes"
           >
-            <Checkbox name="accessibility" value="a11y" label="Accessibility and inclusive design" />
-            <Checkbox name="wcag-compliance" value="wcag" label="WCAG compliance and testing" />
-            <Checkbox name="screen-reader" value="sr" label="Screen reader optimization" />
-            <Checkbox name="keyboard-nav" value="keyboard" label="Keyboard navigation" />
+            <Checkbox name="tech-seo" value="tech-seo" label="Technical SEO" />
+            <Checkbox name="ai-optimization" value="ai-optimization" label="AI Optimization" />
+            <Checkbox name="aeo" value="aeo" label="AEO (Answer Engine Optimization)" />
           </Fieldset>
 
-          <!-- Radio group (shared names) -->
-          <Fieldset name="experience" legend="Your experience level" required>
-            <Radio name="experience" value="beginner" label="Beginner" />
-            <Radio name="experience" value="intermediate" label="Intermediate" />
-            <Radio name="experience" value="advanced" label="Advanced" />
-          </Fieldset>
-
-          <Button htmlType="submit" type="primary">Send Message</Button>
+          <Button htmlType="submit" type="primary">Trimite mesaj</Button>
         </Form>
       </div>
       <div class="space-content">
-        <Heading level="h3">Contact us</Heading>
+        <Heading level="h3">Let’s connect</Heading>
         <p class="text-lg">
-          Experience the power of Accessible Astro Starter's Form components! This contact form showcases our
-          comprehensive form validation system with built-in accessibility features and WCAG 2.2 compliance.
+         Asigură-te că brandul tău este descoperit de AI folosind strategiile noastre demonstrate de AI SEO și Optimizare pentru Motoarele Generative (GEO).
         </p>
         <p>
-          Our Form component includes automatic validation, proper error handling, semantic HTML structure, and screen
-          reader support. Test out the various input types, validation patterns, and interactive elements to see how
-          accessibility and usability work together seamlessly.
+        
+
+          
         </p>
 
         <div class="gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:phone" size={20} class="flex-shrink-0" />
           <p>
-            <span class="font-bold">Phone:</span>
-            <Link href="tel:+12345678900">+1 (234) 567-8900</Link>
+            <span class="font-bold">Telefon:</span>
+            <Link href="tel:+40750431911">+40 750 431 911</Link>
           </p>
         </div>
 
@@ -79,23 +65,31 @@ import { Icon } from 'astro-icon/components'
           <Icon aria-hidden="true" name="lucide:mail" size={20} class="flex-shrink-0" />
           <p>
             <span class="font-bold">Email:</span>
-            <Link href="mailto:hello@accessibleastro.dev">hello@accessibleastro.dev</Link>
+            <Link href="mailto:hello@indexlab.ro">hello@indexlab.ro</Link>
           </p>
         </div>
 
         <div class="gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:map-pin" size={20} class="flex-shrink-0" />
           <p>
-            <span class="font-bold">Address:</span>
-            123 Accessibility Lane, Web Standards City
+            <span class="font-bold">București:</span>
+            Virtuții 10, România
+          </p>
+        </div>
+
+        <div class="gap-2xs flex items-center">
+          <Icon aria-hidden="true" name="lucide:map-pin" size={20} class="flex-shrink-0" />
+          <p>
+            <span class="font-bold">Amsterdam:</span>
+            Olanda
           </p>
         </div>
 
         <div class="gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:clock" size={20} class="flex-shrink-0" />
           <p>
-            <span class="font-bold">Business Hours:</span>
-            Monday - Friday, 9:00 AM - 5:00 PM EST
+            <span class="font-bold">Program:</span>
+            Luni - Vineri, 09:00 - 18:00 (Ora Europei de Est)
           </p>
         </div>
 
