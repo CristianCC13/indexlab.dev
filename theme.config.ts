@@ -7,9 +7,9 @@ export default defineThemeConfig({
   id: 'accessible-astro-starter',
   logo: logoImage,
   seo: {
-    title: 'indexLab',
+    title: 'indexLab - Optimizare Tehnică SEO pentru Era AI',
     description:
-      'An Accessible Starter Theme for Astro including several accessibility features and tools to help you build faster.',
+      'IndexLab oferă optimizare tehnică SEO pentru era AI: Core Web Vitals, crawlability, structured data și strategie de conținut pentru a fi vizibil în motoarele de căutare și în răspunsurile AI.',
     author: 'Florin Cristian',
     image: previewImage, // Can also be a string e.g. '/social-preview-image.png',
   },
@@ -41,19 +41,15 @@ export default defineThemeConfig({
   },
   socials: [
     {
-      label: 'GitHub',
-      href: 'https://github.com/incluud/',
-      icon: 'lucide:github',
+      label: 'Instagram',
+      href: 'https://instagram.com/indexlab',
+      icon: 'lucide:instagram',
     },
     {
-      label: 'Bluesky',
-      href: 'https://bsky.app/profile/incluud.dev',
-      icon: 'lucide:bot-message-square',
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/in/florin-cristian',
+      icon: 'lucide:linkedin',
     },
-    {
-      label: 'Open Collective',
-      href: 'https://opencollective.com/incluud',
-      icon: 'lucide:hand-heart',
-    },
+
   ],
 })
