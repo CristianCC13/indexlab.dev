@@ -20,26 +20,41 @@ const { loading = 'eager' }: Props = Astro.props
 ---
 
 <Link href="/" class="flex items-center gap-1">
+  <!-- Svg definition for the dynamic icon gradient -->
+  <svg width="0" height="0" class="absolute overflow-hidden" style="position: absolute; width: 0; height: 0;">
+    <defs>
+      <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="25%" stop-color="#d648ff" />
+        <stop offset="100%" stop-color="#00d1b7" />
+      </linearGradient>
+    </defs>
+  </svg>
+
   <!-- Varianta 1: CPU / Tech (Decomentează pentru a o folosi) -->
-  <!-- <Icon aria-hidden="true" name="lucide:cpu" class="w-8 h-8 text-gradient" /> -->
+  <!-- <Icon aria-hidden="true" name="lucide:cpu" class="w-7 h-7 icon-gradient" /> -->
   
-  <!-- Varianta 2: Scântei / Generative AI (Activă) -->
-  <Icon aria-hidden="true" name="lucide:sparkles" class="w-8 h-8 text-gradient" />
+  <!-- Varianta 4: Flask / Lab (Activă) -->
+  <Icon aria-hidden="true" name="lucide:flask-conical" class="w-7 h-7" style="stroke: url(#logo-gradient);" />
 
   <!-- Varianta 3: Hexagon / Structură (Decomentează pentru a o folosi) -->
-  <!-- <Icon aria-hidden="true" name="lucide:hexagon" class="w-8 h-8 text-gradient" /> -->
-  <span class="text-xl font-bold sm:text-2xl text-gradient">{themeConfig.name}</span>
+  <!-- <Icon aria-hidden="true" name="lucide:hexagon" class="w-7 h-7 icon-gradient" /> -->
+  <span class="text-xl font-bold sm:text-2xl tracking-tighter text-gradient">{themeConfig.name}</span>
 </Link>
 
 <style lang="scss">
   .text-gradient {
     background: linear-gradient(
       315deg,
-      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
-      light-dark(var(--color-secondary-300), var(--color-primary-200))
+      #d648ff 25%,
+      #00d1b7
     );
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  :global(.icon-gradient),
+  :global(.icon-gradient *) {
+    stroke: url(#logo-gradient) !important;
   }
 </style>
