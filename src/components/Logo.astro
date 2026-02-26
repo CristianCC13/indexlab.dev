@@ -1,6 +1,6 @@
 ---
 import { Link } from 'accessible-astro-components'
-import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 import themeConfig from '@theme-config'
 
 /**
@@ -20,17 +20,26 @@ const { loading = 'eager' }: Props = Astro.props
 ---
 
 <Link href="/" class="flex items-center gap-1">
-  {
-    themeConfig.logo && (
-      <Image
-        src={themeConfig.logo}
-        alt=""
-        aria-hidden="true"
-        width="24"
-        height="18"
-        loading={loading}
-      />
-    )
-  }
-  <span class="text-sm font-bold sm:text-lg">{themeConfig.name}</span>
+  <!-- Varianta 1: CPU / Tech (Decomentează pentru a o folosi) -->
+  <!-- <Icon aria-hidden="true" name="lucide:cpu" class="w-8 h-8 text-gradient" /> -->
+  
+  <!-- Varianta 2: Scântei / Generative AI (Activă) -->
+  <Icon aria-hidden="true" name="lucide:sparkles" class="w-8 h-8 text-gradient" />
+
+  <!-- Varianta 3: Hexagon / Structură (Decomentează pentru a o folosi) -->
+  <!-- <Icon aria-hidden="true" name="lucide:hexagon" class="w-8 h-8 text-gradient" /> -->
+  <span class="text-xl font-bold sm:text-2xl text-gradient">{themeConfig.name}</span>
 </Link>
+
+<style lang="scss">
+  .text-gradient {
+    background: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-300), var(--color-primary-200))
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
