@@ -1,0 +1,49 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Card } from 'accessible-astro-components'
+import googleWebMcpImage from '@assets/images/posts/google-webmcp.png'
+
+const customPost = {
+  title: 'Google a lansat oficial WebMCP: Ce înseamnă asta pentru viitorul AI Browsing-ului',
+  body: 'O nouă lansare majoră Google schimbă felul în care AI-ul interacționează cu web-ul. Află ce este WebMCP și cum va impacta SEO și navigarea.',
+  featuredImage: googleWebMcpImage,
+  shortUrl: 'google-a-lansat-oficial-webmcp',
+}
+
+const posts = [customPost]
+---
+
+<DefaultLayout
+  title="Blog indexLab"
+  description="Cele mai noi articole, noutăți și resurse despre SEO, Inteligență Artificială și Optimizare Web."
+>
+  <PageHeader
+    title="Blog"
+    subtitle="Noutăți, strategii și tot ce trebuie să știi din lumea AI SEO și optimizării pentru motoarele generative."
+    bgType="bordered"
+  />
+
+  <section class="my-12">
+    <div class="container">
+      <ul class="my-3 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          posts.map((post) => (
+            <li>
+              <Card
+                imageComponent={post.featuredImage}
+                url={'/blog/' + post.shortUrl}
+                title={post.title}
+                headingLevel="h2"
+                footer={'Florin Cristian'}
+                fullHeight={true}
+              >
+                {post.body}
+              </Card>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</DefaultLayout>
