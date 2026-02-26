@@ -37,81 +37,77 @@ import { Icon } from 'astro-icon/components'
       </div>
     </div>
   </section>
-  <!-- <ContentMedia imgSrc="/accessible-components.webp">
-    <Heading level="h2">Accessible components</Heading>
-    <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <Link
-        isExternal
-        href="https://github.com/incluud/accessible-astro-components">separate package</Link
-      >. They'll get you up and running in building an accessible solution for your visitors.
-    </p>
-  </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <Heading level="h2">WCAG 2.2 AA compliant</Heading>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia> -->
-  <!-- <FeaturedProjects /> -->
-  <!-- <FeaturedPosts /> -->
+  <section class="my-32">
+    <div class="container">
+      <Heading level="h2" class="mb-16 text-center">Cum lucrăm împreună</Heading>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-3 relative">
+        <div class="flex flex-col gap-4 text-center items-center">
+          <div class="flex items-center justify-center p-6 bg-secondary-100 dark:bg-secondary-800 rounded-full w-24 h-24 mb-4 z-10 relative">
+            <Icon aria-hidden="true" name="lucide:bot" class="w-12 h-12 text-primary-500" />
+          </div>
+          <h3 class="text-3xl font-bold">1. Auditul AI-Powered</h3>
+          <p class="text-xl">
+            Analizăm infrastructura actuală folosind tool-uri avansate și identificăm blocajele tehnice și oportunitățile SEO neexploatate.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 text-center items-center">
+          <div class="flex items-center justify-center p-6 bg-secondary-100 dark:bg-secondary-800 rounded-full w-24 h-24 mb-4 z-10 relative">
+            <Icon aria-hidden="true" name="lucide:wrench" class="w-12 h-12 text-primary-500" />
+          </div>
+          <h3 class="text-3xl font-bold">2. Implementarea Tehnică</h3>
+          <p class="text-xl">
+            Optimizăm Core Web Vitals, reparăm erorile de indexare și stabilim o fundație solidă pentru scalarea viitoare a continutului.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 text-center items-center">
+          <div class="flex items-center justify-center p-6 bg-secondary-100 dark:bg-secondary-800 rounded-full w-24 h-24 mb-4 z-10 relative">
+            <Icon aria-hidden="true" name="lucide:rocket" class="w-12 h-12 text-primary-500" />
+          </div>
+          <h3 class="text-3xl font-bold">3. Scalarea Organică</h3>
+          <p class="text-xl">
+            Generăm la scară campanii Programmatic SEO și adaptăm site-ul tău pentru o prezență constantă în AI Overviews și căutări LLM.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="my-64">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
       <div class="flex flex-col items-start gap-4">
-        <Heading level="h2">Intrebari Frecvente</Heading>
+        <Heading level="h2">Întrebări Frecvente</Heading>
         <p class="text-2xl">
-          This section demonstrates how to effectively use the Accordion component to organize and display frequently
-          asked questions in an accessible and user-friendly way.
+          Aici găsești răspunsuri la cele mai comune întrebări despre serviciile noastre de optimizare tehnică și SEO. Dacă ai alte neclarități, nu ezita să ne contactezi.
         </p>
-        <Link href="/faq" isButton type="primary" animateOnHover animationType="boop">
-          <Icon aria-hidden="true" name="lucide:headset" size=" 1.5rem" />
-          Contact support team
+        <Link href="/contact" isButton type="primary" animateOnHover animationType="boop">
+          <Icon aria-hidden="true" name="lucide:mail" size="1.5rem" />
+          Contactează-ne
         </Link>
       </div>
       <div class="space-content">
         <Accordion>
-          <AccordionItem name="exclusive" title="What is WCAG and why is it important?" open>
+          <AccordionItem name="exclusive" title="Ce este Technical SEO și de ce este important?" open>
             <p>
-              WCAG (Web Content Accessibility Guidelines) is a set of internationally recognized standards for web
-              accessibility. Following WCAG ensures your website is usable by people with various disabilities,
-              including visual, auditory, physical, and cognitive impairments. It's important not just for
-              accessibility, but also for legal compliance, SEO, and reaching a wider audience.
+              Technical SEO reprezintă procesul de optimizare a infrastructurii unui site web pentru a permite motoarelor de căutare să îl descopere, să îl parcurgă (crawl) și să îl indexeze eficient. Este fundamentul pe care se construiește orice strategie de performanță, asigurând vizibilitate maximă și o experiență perfectă pentru utilizatori.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="What's the difference between ARIA labels and alt text?">
+          <AccordionItem name="exclusive" title="Cum influențează AI-ul strategiile SEO moderne?">
             <p>
-              Alt text is specifically for describing images to screen reader users, while ARIA labels (aria-label,
-              aria-labelledby) can describe any element on a page. Alt text is HTML's native way to provide alternative
-              text for images, while ARIA labels are part of the ARIA specification that helps make dynamic content and
-              advanced UI controls more accessible.
+              Inteligența Artificială transformă modul în care motoarele de căutare procesează interogările și livrează rezultate. Prin strategii AI-Powered SEO, folosim date empirice și modele AI pentru decizii mult mai rapide și mai precise, ajutându-te să rămâi înaintea competiției și să anticipezi intenția reală a utilizatorilor.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="Why is keyboard navigation important?">
+          <AccordionItem name="exclusive" title="Ce înseamnă Generative Engine Optimization (GEO)?">
             <p>
-              Keyboard navigation is essential for users who can't use a mouse, including people with motor
-              disabilities, visual impairments, or those who simply prefer keyboard controls. A website should be fully
-              operable using only a keyboard, with visible focus indicators and logical tab order. This includes being
-              able to access all interactive elements and navigate through content efficiently.
+              GEO se referă la optimizarea conținutului nu doar pentru motoarele tradiționale, ci și pentru asistenții bazați pe AI generativ, cum ar fi ChatGPT, Perplexity, Gemini sau AI Overviews din Google. Ne asigurăm că brandul tău este recunoscut și citat ca o sursă de încredere direct în răspunsurile generate de AI.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="What is a sufficient color contrast ratio?">
+          <AccordionItem name="exclusive" title="Cât durează o migrare SEO și care sunt riscurile?">
             <p>
-              According to WCAG 2.2 AA standards, text should have a minimum contrast ratio of 4.5:1 against its
-              background for regular text, and 3:1 for large text (18pt or 14pt bold). For non-text elements like icons
-              or buttons, a minimum ratio of 3:1 is required. This ensures content is readable for users with visual
-              impairments or color blindness.
+              O migrare de site necesită o planificare meticuloasă pentru a evita pierderile de trafic. De la auditul inițial, maparea redirect-urilor (301) și până la monitorizarea riguroasă post-lansare, procesul asigură o tranziție lină. Riscul principal este pierderea autorității, pe care noi îl eliminăm printr-o execuție tehnică impecabilă.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="How do I make custom components accessible?">
+          <AccordionItem name="exclusive" title="Pentru ce tip de site se potrivește Programmatic SEO?">
             <p>
-              To make custom components accessible, focus on these key aspects: use semantic HTML where possible,
-              implement proper keyboard support, add appropriate ARIA attributes, manage focus when needed, and ensure
-              adequate color contrast. Always test with screen readers and keyboard navigation. Consider using
-              established design patterns from the <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/"
-                >ARIA Authoring Practices Guide</Link
-              >.
+              Programmatic SEO este ideal pentru platforme, directoare, e-commerce sau proiecte care dețin baze de date structurate și doresc să capteze o varietate mare de căutări long-tail. Această tactică implică generarea la scară a mii de pagini optimizate folosind template-uri specifice, toate având un nivel ridicat de calitate a conținutului.
             </p>
           </AccordionItem>
         </Accordion>
@@ -121,12 +117,12 @@ import { Icon } from 'astro-icon/components'
 
   <section class="mt-64 mb-32">
     <div class="container">
-      <Heading level="h2" class="mb-16">Impact in numbers</Heading>
+      <Heading level="h2" class="mb-16">Impactul nostru în cifre</Heading>
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="1.100+" title="Stars" sub="On GitHub" />
-        <Counter count="35+" title="Accessible" sub="Components" />
-        <Counter count="500+" title="Commits" sub="Merged" />
-        <Counter count="48+" title="Months" sub="Since launch" />
+        <Counter count="900K+" title="Pagini web" sub="Optimizate și indexate" />
+        <Counter count="99%" title="Scor de performanță" sub="Core Web Vitals" />
+        <Counter count="45+" title="Migrări complexe" sub="Finalizate fără pierderi" />
+        <Counter count="3000%" title="Creștere trafic" sub="Organic, agentic" />
       </div>
     </div>
   </section>
