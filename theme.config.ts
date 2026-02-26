@@ -24,20 +24,14 @@ export default defineThemeConfig({
     items: [
       {
         type: 'link',
-        label: 'indexLab',
-        href: '/',
+        label: 'Servicii',
+        href: '/servicii',
       },
       {
         type: 'link',
         label: 'Blog',
         href: '/blog',
       },
-      {
-        type: 'link',
-        label: 'Servicii',
-        href: '/servicii',
-      },
-
       {
         type: 'link',
         label: 'Contact',
