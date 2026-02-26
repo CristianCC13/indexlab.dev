@@ -24,7 +24,7 @@ const AnyLauncherSwitch = LauncherSwitch as any
  */
 const launcherPreferenceItems = [
   {
-    label: 'Dark mode',
+    label: 'Mod întunecat',
     onAction: 'toggle-dark-mode',
   }
 ]
@@ -108,8 +108,8 @@ const launcherSocialItems = (themeConfig.socials ?? []).map((item) => ({
 
 ---
 
-<AnyLauncher id="site-launcher">
-  <AnyLauncherPreferences label="Preferences">
+<AnyLauncher id="site-launcher" searchPlaceholder="Cauta">
+  <AnyLauncherPreferences label="Preferințe">
     {
       launcherPreferenceItems.map((item) => (
         <AnyLauncherSwitch label={item.label} onAction={item.onAction} />
@@ -129,7 +129,7 @@ const launcherSocialItems = (themeConfig.socials ?? []).map((item) => ({
   </AnyLauncherNav>
   {
     launcherBlogItems.length > 0 && (
-      <AnyLauncherNav label="Blog posts">
+      <AnyLauncherNav label="Articole Blog">
         {launcherBlogItems.map((item) => (
           <AnyLauncherLink label={item.label} href={item.href}>
             <Icon slot="icon" aria-hidden="true" name="lucide:scroll-text" size="16" />
@@ -142,7 +142,7 @@ const launcherSocialItems = (themeConfig.socials ?? []).map((item) => ({
 
   {
     launcherSocialItems.length > 0 && (
-      <AnyLauncherNav label="Socials">
+      <AnyLauncherNav label="Social">
         {launcherSocialItems.map((item) => (
           <AnyLauncherLink
             label={item.label}
